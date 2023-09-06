@@ -11,6 +11,9 @@ import ProblemListView from './ProblemListView';
 import ProblemData from './assets/problem_data.json';
 
 
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 import { List, ListItem } from 'material-ui/List';
 
 class Home extends React.Component {
@@ -26,16 +29,16 @@ class Home extends React.Component {
 					label='我'
 					onActive={() => { this.select(0) }}
 				>
-					<div style={{ display: 'flex', margin: 30, marginTop: 60 }}>
+					<div style={{ display: 'flex', margin: 40, marginTop: 60 }}>
 						{/* Image on the left */}
 						<div>
-							<img src={Me1} alt='Me1' style={{ width: '60%' }} />
+							<img src={Me1} alt='Me1' style={{ width: '70%' }} />
 						</div>
 
 						{/* Buttons on the right */}
 						<div style={{ marginLeft: 'auto', display: 'flex', flexDirection: 'column' }}>
 
-							<List>
+							<List style={{ width: '120%' }}>
 								<ListItem primaryText="口臭" rightIcon={<MdIconArrow />}
 									style={{ marginBottom: 15, backgroundColor: 'black', color: 'white' }} />
 								<ListItem primaryText="肥胖" rightIcon={<MdIconArrow />}
@@ -45,7 +48,23 @@ class Home extends React.Component {
 
 
 								<ListItem primaryText="+ 添加"
-									style={{ marginBottom: 15}} />
+									style={{ marginBottom: 15 }} >
+
+									{/* <Popover
+										open={this.state.open}
+										anchorEl={this.state.anchorEl}
+										anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+										targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+										onRequestClose={this.handleRequestClose}
+									>
+										<Menu>
+											<MenuItem primaryText="Refresh" />
+											<MenuItem primaryText="Help &amp; feedback" />
+											<MenuItem primaryText="Settings" />
+											<MenuItem primaryText="Sign out" />
+										</Menu>
+									</Popover> */}
+								</ListItem>
 							</List>
 						</div>
 					</div>
