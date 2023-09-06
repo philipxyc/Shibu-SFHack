@@ -5,6 +5,7 @@ import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Chip from 'material-ui/Chip';
 import MdIconCake from 'material-ui/svg-icons/social/cake';
+import MdIconWeight from 'material-ui/svg-icons/action/accessibility';
 import MdIconSchool from 'material-ui/svg-icons/social/school';
 import MdIconStars from 'material-ui/svg-icons/action/stars';
 import MdIconFlashOn from 'material-ui/svg-icons/image/flash-on';
@@ -19,41 +20,36 @@ class UserProfile extends React.Component {
 		return (
 			<Card>
 				<CardHeader
-					title='王小明'
-					subtitle='学渣一枚，大神们多多关照'
+					title='蔡许坤'
+					// subtitle='学渣一枚，大神们多多关照'
 					avatar={yuehaoavatar}
 				/>
 				<CardMedia>
 					<div>
 						<List>
 							<Divider />
-							<ListItem
+							<ListItem	
 								key={0}
 								insetChildren={true}
-								primaryText='16岁 高中二年级'
+								primaryText='37岁'
 								leftIcon={<MdIconCake />}
 							/>
 							<Divider />
 							<ListItem
 								key={1}
 								insetChildren={true}
-								primaryText='上海中学'
-								leftIcon={<MdIconSchool />}
+								primaryText='67kg'
+								leftIcon={<MdIconWeight />}
 							/>
 							<Divider />
 							<ListItem
 								key={2}
 								insetChildren={true}
-								primaryText={
-									<div style={{display: 'flex', flexWrap: 'wrap'}}>
-										<Chip style={{marginRight: 7}}>数学</Chip>
-										<Chip style={{marginRight: 7}}>物理</Chip>
-									</div>
-								}
+								primaryText='已坚持食补37天'
 								leftIcon={<MdIconStars />}
 							/>
 							<Divider />
-							<ListItem
+							{/* <ListItem
 								key={3}
 								insetChildren={true}
 								primaryText='全国综合排名 1024'
@@ -84,7 +80,7 @@ class UserProfile extends React.Component {
 										leftIcon={<MdIconChangeHistory />}
 									/>
 								]}
-							/>
+							/> */}
 							<Divider />
 						</List>
 					</div>
