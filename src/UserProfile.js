@@ -23,7 +23,16 @@ class UserProfile extends React.Component {
 					title='蔡许坤'
 					// subtitle='学渣一枚，大神们多多关照'
 					avatar={yuehaoavatar}
-				/>
+					actAsExpander={true}
+					showExpandableButton={true}
+				  />
+				
+				<CardActions expandable={true}>
+					<FlatButton label="蔡许坤" style={{backgroundColor: '#F5C718'}} />
+					<FlatButton label="小宝" style={{backgroundColor: '#808080', color:'white'}} />
+					<FlatButton label="老妈" style={{backgroundColor: '#808080', color:'white'}}/>
+				</CardActions>
+
 				<CardMedia>
 					<div>
 						<List>
