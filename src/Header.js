@@ -11,7 +11,7 @@ class Header extends React.Component {
 	render() {
 		return (
 			<AppBar
-				title='Betaclass'
+				title='食补'
 				iconElementLeft={
 					<IconMenu
 						iconButtonElement={

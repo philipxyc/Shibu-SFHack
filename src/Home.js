@@ -3,44 +3,70 @@ import Paper from 'material-ui/Paper';
 import MdIconDoneAll from 'material-ui/svg-icons/action/done-all';
 import MdIconCenterFocusWeak from 'material-ui/svg-icons/image/center-focus-weak';
 import MdIconEqualizer from 'material-ui/svg-icons/av/equalizer';
+import MdIconArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import Subheader from 'material-ui/Subheader'
-import fig1 from './assets/fig1.png';
+import Me1 from './assets/Me1.png';
+import { Tabs, Tab } from 'material-ui/Tabs';
+import ProblemListView from './ProblemListView';
+import ProblemData from './assets/problem_data.json';
 
+
+import { List, ListItem } from 'material-ui/List';
 
 class Home extends React.Component {
+
+	select(i) {
+		this.props.mainApp.setState({ contentParams: { selectedIndex: i } });
+	}
+
 	render() {
 		return (
-			<div style={{padding: 15}}>
-				<Paper zDepth={1} style={{borderRadius: 8, padding: 5}}>
-					<Subheader>完成进度</Subheader>
-					<div style={{paddingTop: 0, paddingLeft: 20, paddingRight: 20, paddingBottom: 20}}>
-						<MdIconDoneAll style={{width: 50, height: 50}} />
-						<span style={{fontSize: 40, float: 'right'}}>198/300</span>
+			<Tabs initialSelectedIndex={this.props.mainApp.state.contentParams.selectedIndex}>
+				<Tab
+					label='我'
+					onActive={() => { this.select(0) }}
+				>
+					<div style={{ display: 'flex', margin: 30, marginTop: 60 }}>
+						{/* Image on the left */}
+						<div>
+							<img src={Me1} alt='Me1' style={{ width: '60%' }} />
+						</div>
+
+						{/* Buttons on the right */}
+						<div style={{ marginLeft: 'auto', display: 'flex', flexDirection: 'column' }}>
+
+							<List>
+								<ListItem primaryText="口臭" rightIcon={<MdIconArrow />}
+									style={{ marginBottom: 15, backgroundColor: 'black', color: 'white' }} />
+								<ListItem primaryText="肥胖" rightIcon={<MdIconArrow />}
+									style={{ marginBottom: 15, backgroundColor: 'black', color: 'white' }} />
+								<ListItem primaryText="失眠" rightIcon={<MdIconArrow />}
+									style={{ marginBottom: 15, backgroundColor: 'black', color: 'white' }} />
+
+
+								<ListItem primaryText="+ 添加"
+									style={{ marginBottom: 15}} />
+							</List>
+						</div>
 					</div>
-				</Paper>
+				</Tab>
+				<Tab
+					label='小宝'
+					onActive={() => { this.select(1) }}
+				>
+					<ProblemListView
+						problemList={ProblemData['outclass']}
+						mainApp={this.props.mainApp}
+					/>
+				</Tab>
 
-				<Paper zDepth={1} style={{borderRadius: 8, padding: 5, marginTop: 20, backgroundColor: '#03A9F4', color: 'white'}}>
-					<Subheader style={{color: 'white'}}>正确率</Subheader>
-					<div style={{paddingTop: 0, paddingLeft: 20, paddingRight: 20, paddingBottom: 20}}>
-						<span style={{fontSize: 40}}>64.09%</span>
-						<MdIconCenterFocusWeak color='white' style={{width: 50, height: 50, float: 'right'}} />
-					</div>
-				</Paper>
+				<Tab
+					label='老爸'
+					onActive={() => { this.select(2) }}
+				>
+				</Tab>
+			</Tabs>
 
-				<Paper zDepth={1} style={{borderRadius: 8, padding: 5, marginTop: 20, backgroundColor: '#E91E63', color: 'white'}}>
-					<Subheader style={{color: 'white'}}>你的段位</Subheader>
-					<div style={{paddingTop: 0, paddingLeft: 20, paddingRight: 20, paddingBottom: 20}}>
-						<MdIconEqualizer color='white' style={{width: 50, height: 50}} />
-						<span style={{fontSize: 40, float: 'right'}}>白银</span>
-					</div>
-				</Paper>
-
-
-				<div style={{marginTop: 60}}>
-					<h2>学习记录</h2>
-					<img src={fig1} alt='fig1' />
-				</div>
-			</div>
 		);
 	}
 }
