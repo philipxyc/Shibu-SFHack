@@ -11,8 +11,8 @@ class NotificationListView extends React.Component {
 	render() {
 		return (
 			<List>
-				<ListItem onClick={() => {this.select()}} primaryText={<b>今日学习汇报</b>} leftIcon={<MdIconMailOutline />} />
-				<ListItem primaryText="夏小寅同学关注了你" leftIcon={<MdIconMailOutline />} />
+				{/* <ListItem onClick={() => {this.select()}} primaryText={<b>今日学习汇报</b>} leftIcon={<MdIconMailOutline />} /> */}
+				<ListItem primaryText="小王，早睡早起更有助于配合食补功效哦！头发正在慢慢生长！" leftIcon={<MdIconMailOutline />} />
 			</List>
 		);
 	}
