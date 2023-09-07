@@ -1,12 +1,12 @@
 export default {
     "appBar": {
-        "color": "#2196f3"
+        "color": "#F5C718"
     },
     "tabs": {
-        "backgroundColor": "#2196f3"
+        "backgroundColor": "#F5C718"
     },
     "palette": {
-        "primary1Color": "#2196f3",
+        "primary1Color": "#F5C718",
         "primary2Color": "#303f9f"
     }
 };

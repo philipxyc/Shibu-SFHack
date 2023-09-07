@@ -2,7 +2,7 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import ProblemListView from './ProblemListView';
 import ProblemData from './assets/problem_data.json';
-
+import Page from './assets/Search.png'
 
 class ProblemPanel extends React.Component {
 	select(i) {
@@ -11,26 +11,7 @@ class ProblemPanel extends React.Component {
 
 	render() {
 		return (
-			<Tabs initialSelectedIndex={this.props.mainApp.state.contentParams.selectedIndex}>
-				<Tab
-					label='课内'
-					onActive={() => {this.select(0)}}
-				>
-					<ProblemListView
-						problemList={ProblemData['inclass']}
-						mainApp={this.props.mainApp}
-					/>
-				</Tab>
-				<Tab
-					label='课外'
-					onActive={() => {this.select(1)}}
-				>
-					<ProblemListView
-						problemList={ProblemData['outclass']}
-						mainApp={this.props.mainApp}
-					/>
-				</Tab>
-			</Tabs>
+			<img  src={Page} alt='Page' style={{ margin:20, width: '90%' }} />
 		);
 	}
 }

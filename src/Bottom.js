@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import MdIconLibraryBooks from 'material-ui/svg-icons/av/library-books';
+import MdIconSearch from 'material-ui/svg-icons/action/search';
 import MdIconHome from 'material-ui/svg-icons/action/home';
 import MdIconAccountCircle from 'material-ui/svg-icons/action/account-circle';
 import './css/Bottom.css';
@@ -30,7 +30,7 @@ class Bottom extends Component {
 			<Paper zDepth={1} className='Bottom'>
 				<BottomNavigation selectedIndex={this.state.selectedIndex}>
 					<BottomNavigationItem
-						icon={<MdIconLibraryBooks />}
+						icon={<MdIconSearch />}
 						onClick={() => this.select(0)}
 					/>
 					<BottomNavigationItem
